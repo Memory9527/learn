@@ -1,4 +1,4 @@
-#HTML5标记#
+# HTML5标记 #
 - HTML5为HTML增加了很多新元素。
 - `<section>`、`<article>`、`<aside>`、`<nav>`、`<header>`、和`<footer>`都是建立页面结构的新元素，与使用`<div>`相比，它们可以提供更多含义。
 - `<section>`用于对相关的内容分组。
