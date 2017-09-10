@@ -1,0 +1,49 @@
+body{
+background-color: white;
+font:small/1.6em verdana,sans-serif;
+}
+ h1,h2{
+ 	color: #5F9EA0;
+ }
+ h1{
+ 	font-size: 150%;
+ }
+ h2{
+ 	font-size:130%;
+ }
+
+
+aside{
+	background: url(../img/cocktail.gif) repeat-x top;
+	width:280px;
+	float:right;
+	border:1px solid gray;
+	margin-left:20px;
+	margin-bottom:10px;
+	padding: 0px 20px;
+	text-align:center;
+	
+}
+aside h2{
+	color:black;
+}
+aside h3{
+	color: #DC143C;
+}
+blockquote{
+	background: #00BFFF url(../img/background.gif) no-repeat left top;
+	margin:30px 330px 30px 30px;
+	padding: 25px 25px 25px 80px;
+	border:1px dashed white;
+	border-radius:10px;
+	line-height:1.9em;
+}
+.cd{
+	font-style:italic;
+}
+.artist{
+	font-weight: bold;
+}
+span{
+color:black;
+}

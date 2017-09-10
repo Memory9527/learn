@@ -1,0 +1,48 @@
+body{
+background-color:white;
+font:samll verdana,sans-serif;
+}
+h1,h2{
+color:#cc6600;
+border-bottom:1px solid #888888;
+}
+
+table{
+margin:0px 20px;
+border:1px solid black;
+caption-side: bottom;
+border-collapse:collapse;
+}
+
+td,th{
+border:1px dotted gray;
+padding:5px;
+}
+th {
+  background-color: #cc6600;
+}
+
+table table th{
+background-color:white;
+}
+
+caption{
+font-style: italic;
+padding-top:8px;
+}
+
+.colorcell{
+background-color:#fcba7a;
+}
+
+#ita{
+font-style:italic;
+padding:20px;
+}
+.right{
+text-align:right;
+}
+
+li{
+list-style-image:url(../img/backpack.gif);
+}

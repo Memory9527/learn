@@ -1,0 +1,89 @@
+body{
+	background-color:burlywood;
+	font:small/1.6em sans-serif; 
+}
+h1{
+font-size:150%;
+color: crimson;
+}
+header{
+	background-color: chocolate;
+	margin: 10px 10px 0px;
+}
+#logan{
+	float:right;
+}
+nav ul{
+	background-color: #efe5d0;
+	margin:10px 10px 0px;
+	padding: 5px;
+	list-style-type: none;
+} 
+nav ul li {
+	display:inline;
+	padding:5px 10px;
+}
+
+nav ul li a:link, ul li a:visited{
+	color:#954b4b;
+	border-bottom:none;
+	font-weight:bold;
+}
+
+.selected {
+	background-color: #c8b99c;
+}
+
+a:link{
+	text-decoration: none;
+	color:crimson;
+	border-bottom:1px dotted crimson;
+}
+a:visited{
+	text-decoration: none;
+	color:cadetblue;
+	border-bottom:1px dotted cadetblue;
+}
+footer{
+	background-color:chocolate ;
+	margin:0px 10px 10px;
+	text-align:center;
+	clear:right;
+}
+
+.center{
+	text-align:center;
+}
+div#tableContainer{
+	display: table;
+	border-spacing:10px
+}
+
+div#tableRow{
+	display:table-row;
+}
+
+#first{
+display:table-cell;
+vertical-align:top;
+background:url(../img/background2.gif) top right;
+padding: 15px;
+width:20%;
+}
+
+#second{
+display: table-cell;
+vertical-align:top;
+background:url(../img/background2.gif) left top;
+padding:15px;
+}
+aside{
+display:table-cell;
+vertical-align:top;
+background: url(../img/background2.gif) bottom right;
+padding:15px;
+line-height:1.9em;
+}
+span{
+color:crimson;
+}
