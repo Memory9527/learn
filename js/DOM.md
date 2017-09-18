@@ -17,13 +17,12 @@ HTML DOM 是：
 - HTML 的标准对象模型
 - HTML 的标准编程接口
 - W3C 标准
-- 
+
 HTML DOM 定义了所有 HTML 元素的对象和属性，以及访问它们的方法。
 换言之，HTML DOM 是关于如何获取、修改、添加或删除 HTML 元素的标准。
 
 ## DOM节点 ##
 HTML DOM将HTML文档视作树结构。这种结构被称为节点树：
-![Alt text](./htmltree.gif)
 根据W3C的HTML DOM标准，HTML文档中的所有内容都是节点：
 
 - 整个文档是一个文档节点
@@ -31,15 +30,18 @@ HTML DOM将HTML文档视作树结构。这种结构被称为节点树：
 - 每个HTML属性是属性节点
 - 注释是注释节点
 
-	<html>
-	   <head>
-	     <title>DOM Tutorial</title>
-	   </head>
-	   <body>
-	     <h1>DOM Lesson one</h1>
-	     <p>Hello world!</p>
-	   </body>
-	 </html> 
+
+		<html>
+		   <head>
+		 <title>DOM Tutorial</title>
+		   </head>
+		   <body>
+		 <h1>DOM Lesson one</h1>
+		 <p>Hello world!</p>
+		   </body>
+		 </html> 
+
+
 从上面的HTML中：
 
 - `<html>`节点没有父节点；它是根节点
