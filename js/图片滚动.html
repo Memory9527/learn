@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>导航</title>
+		<style type="text/css">
+			div{
+				width:700px;
+				border: 1px solid red;
+			}
+			div ul {
+				float: right;
+				
+			}
+			ul li {
+				list-style: none;
+				border: 1px solid red;
+				width:20px;
+				height:20px;	
+				margin:6px;
+				text-align: center;
+			}
+			img{
+				width: 600px;
+			}
+			#li0{
+				background: blue;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=ini();
+			var i=0;
+			var Start 
+			function ini(){
+				
+			 	Start=setInterval("img()",1000);
+			}
+			var myImg=["img/2017091318275052229.jpg","img/2017091514041536776.jpg","img/201709151732479829.jpg","img/2017091514315536613.jpg","img/2017091514362567391.jpg","img/2017091515361340324.jpg","img/2017091517351092677.jpg","img/2017091518232197986.jpg"];
+			function img(){
+				i++;
+				if(i>(myImg.length-1)) i=0;
+				var obj=document.getElementById("test");
+				obj.src=myImg[i];
+				//自动切换图片
+				clear();//停止计时器
+				var color=document.getElementById("li"+i);
+				color.style.background="blue";
+				}
+
+			function Stop(){
+				clearInterval(Start);
+			}
+			function stopImg(n,m){
+				//鼠标放到图片上停止图片自动切换的函数
+				i=n;
+				clear();
+				var obj=document.getElementById("test");
+				obj.src=myImg[i];
+				Stop();
+				m.style.background="blue";
+			}
+			function clear(){
+				for(var j=0;j<=7;j++){
+					var obj=document.getElementById("li"+j);
+					obj.style.background="white";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+		<img id="test" src="img/2017091514041536776.jpg" alt="tupian" onmousemove="Stop()" onmouseout="ini()"/>
+		<ul>
+			<li  id="li0" onmouseover="stopImg(0,this)" onmouseout="ini()">1</li>
+			<li  id="li1" onmouseover="stopImg(1,this)" onmouseout="ini()">2</li>
+			<li  id="li2" onmouseover="stopImg(2,this)" onmouseout="ini()">3</li>
+			<li  id="li3" onmouseover="stopImg(3,this)" onmouseout="ini()">4</li>
+			<li  id="li4" onmouseover="stopImg(4,this)" onmouseout="ini()">5</li>
+			<li  id="li5" onmouseover="stopImg(5,this)" onmouseout="ini()">6</li>
+			<li  id="li6"  onmouseover="stopImg(6,this)" onmouseout="ini()">7</li>
+			<li  id="li7" onmouseover="stopImg(7,this)" onmouseout="ini()">8</li>
+		</ul>
+		</div>
+	</body>
+</html>
