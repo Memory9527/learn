@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>星星</title>
+		<style type="text/css">
+			#d2{
+				border: 1px solid black;
+				width: 100px;
+				height: 20px;
+				display: inline-block;
+			}
+			#d3{
+				display:inline-block;
+				background:red;
+				height: 20px;
+				
+			}
+		</style>
+		<script type="text/javascript">
+			var Start;
+			var count=0;
+			var time=0;
+			var Time;
+			function ini(){
+				clearInterval(Start);
+				clearInterval(Time);
+				Start=setInterval("star()",400);
+				Time=setInterval("gameTime()",1000);
+			}
+			
+		function star(){
+		//随机创造星星图案
+		var obj=document.createElement("img");
+		obj.src="img/timg.jpg";
+		document.body.appendChild(obj);
+		w=Math.floor(Math.random()*(100-20)+20);
+		y=Math.floor(Math.random()*1166+100);
+		x=Math.floor(Math.random()*500+100);
+		obj.width=w;
+		obj.onclick=vanish; 
+		obj.style.position="absolute";
+		obj.style.top=x+"px";
+		obj.style.left=y+"px";
+		//统计星星数量
+		count++; 
+		//根据星星数量增加进度条
+		var sp=document.getElementById("d3");
+		sp.style.width=count*5+"px";/
+		//当当星星数超过20游戏结束
+		if(count>=20){
+			alert("游戏结束");
+			clearInterval(Start);
+			location.reload();
+		}
+		}
+		//使星星消失的函数
+		function vanish(){
+			this.parentNode.removeChild(this);
+			count--;
+			sp.style.width=count*5+"px";
+		}
+		//统计游戏时间
+		function gameTime(){
+			var obj=document.getElementById("t");
+			time++;
+			obj.innerHTML="游戏进行了"+time+"秒";
+			
+		}
+		//停止游戏
+		function stop(){
+			alert("游戏暂停");
+		}
+		
+				
+		
+	</script>
+	</head>
+	<body>
+		<input type="button" value="开始" onclick="ini()"/>
+		<input type="button" value="暂停" / onclick="stop()">
+		<span id="t">游戏进行了0秒</span>
+		<span id="d2"><span id="d3"></span></span>
+	</body>
+</html>
