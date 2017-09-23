@@ -266,6 +266,8 @@ Hover(hover,out)
 		});
 	</script>
 ## 常用事件 ##
+语法 | 事件
+---  | ---
 $(selector).click(fn): | 点击事件，会触发fn
 $(selector).dblckick(fn); | 双击事件
 $(selector).focus(); | 获得焦点触发的事件
