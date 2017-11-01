@@ -36,7 +36,6 @@ if ($result = mysqli_query($conn,$sql))
       //计算留言总数
       $count_result = mysqli_query($conn,"SELECT count(*) as count FROM guestbook");
       $countsum = mysqli_fetch_array($count_result)['count'];
-      echo $countsum;
       //计算总页数
       $pagesum = ceil($countsum/$pagesize);
       echo "共有" . $countsum."条留言";
