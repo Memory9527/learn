@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<style type="text/css">
+			#head{
+				font-weight: bold;
+				font-size: 120%;
+				text-align: center;
+				margin: 0px;
+				padding:20px 0px;
+				
+			}
+			form{
+				margin:auto ;
+				display: table;
+				padding: 10px;
+				text-align: left;
+				width: 600px;
+			}
+			.tableRow{
+				display: table-row;
+				line-height:2;
+			}
+			.tableRow>p,.tableRow>label,.tableRow>input{
+				display: table-cell;
+				vertical-align: top;
+				padding:3px;
+			}
+			.tableRow label:first-child{
+				text-align: right;
+			}
+			#submit{
+				letter-spacing: 3px;
+				padding: 4px;
+				background: greenyellow;
+				
+			}
+			.msg{
+				color: gainsboro;	
+				text-align: center;
+				margin: 2px;
+				font-size: 0.9em;
+			}
+			.msg2{
+				color:red;
+			
+				line-height:18px;
+				padding: 5px 3px;
+			}
+		</style>
+<script type="text/javascript">
+//总检测函数
+function checkForm(){
+	if(blurEmail()==false||blurName()==false||blurPwd()==false||blurPwdd()||checkProvince()==false){
+		return false;
+	}else{
+		return true;
+	}
+}
+	
+//email地址框获得焦点的函数
+function focusEmail(){
+	var obj=document.getElementById("emaiMsg");
+	obj.innerHTML="请输入邮件地址邮件";
+	obj.className="msg";
+	
+}
+//email地址框失去焦点
+function blurEmail(){
+	var email= document.getElementById("Email").value;
+	var msg =document.getElementById("emaiMsg");
+	if(email==""){
+		msg.innerHTML="地址不能为空";
+		msg.className="msg2";
+		return false;
+	}else if(email.indexOf("@")== -1){
+		msg.innerHTML="请输入正确的邮箱";
+		msg.className="msg2";
+		return false;
+		}else{
+			msg.innerHTML="<span style='color: greenyellow;'>ok</span>"
+			return true;
+		}
+}
+
+//昵称获得焦点的函数
+function focusName(){
+	var obj=document.getElementById("NameMsg");
+	obj.innerHTML="请输入你喜欢的昵称";
+	obj.className="msg";
+	
+}
+//昵称失去焦点的函数
+function blurName(){
+	var name= document.getElementById("name").value;
+	var msg =document.getElementById("Namemsg");
+	if(name==""){
+		msg.innerHTML="昵称不能为空";
+		msg.className="msg2";
+		return false;
+	}else if(name.length<6){
+		msg.innerHTML="昵称长度不够";
+		msg.className="msg2";
+		return false;
+		}else{
+			msg.innerHTML="<span style='color: greenyellow;'>ok</span>"
+			return true;
+		}
+}
+
+//密码的检测
+//密码获得焦点的函数
+function focusPwd(){
+	var obj=document.getElementById("passMsg");
+	obj.innerHTML="请输入密码";
+	obj.className="msg";
+	
+}
+//密码失去焦点的函数
+function blurPwd(){
+	var pwd= document.getElementById("pass").value;
+	var msg =document.getElementById("passMsg");
+	if(pwd==""){
+		msg.innerHTML="密码不能为空";
+		msg.className="msg2";
+		return false;
+	}else if(pwd.length<6){
+		msg.innerHTML="密码长度必须大于6";
+		msg.className="msg2";
+		return false;
+		}else{
+			msg.innerHTML="<span style='color: greenyellow;'>ok</span>"
+			return true;
+		}
+}
+
+//确认密码
+function focusPwdd(){
+	var obj=document.getElementById("passdMsg");
+	obj.innerHTML="请再次输入密码";
+	obj.className="msg";
+	
+}
+
+function blurPwdd(){
+	var pwd= document.getElementById("pass").value;
+	var pwdd= document.getElementById("passd").value;
+	var msg =document.getElementById("passdMsg");
+	if(pwdd==""){
+		msg.innerHTML="请确认密码";
+		msg.className="msg2";
+		return false;
+	}else if(pwdd!==pwd){
+		msg.innerHTML="密码必须相同";
+		msg.className="msg2";
+		return false;
+		}else{
+			msg.innerHTML="<span style='color: greenyellow;'>ok</span>";
+			return true;
+		}
+}
+//检测地区
+function checkProvince(){
+	var pro=document.getElementById("characters").value;
+	var msg=document.getElementById("selectMsg");
+	if(pro==""){
+		msg.innerHTML="请选择省份";
+		msg.className="msg2";
+		return false;
+	}else{
+		msg.innerHTML="<span style='color: greenyellow;'>ok</span>";
+		return true;
+	}
+}
+//检测是否选择省份
+function changeProvince(){
+	var pro=document.getElementById("province").value;
+	var msg=document.getElementById("selectMsg");
+	if(pr!=""){
+		msg.innerHTML="<span style='color: greenyellow;'>ok</span>";
+		
+	}
+	
+}
+
+</script>
+	</head>
+	<body>
+		<p id="head">欢迎注册</p>
+		<form action="test.php" method="POST" onsubmit="return checkForm()" onchange="changeProvince()">
+		<fieldset>
+			<div class="tableRow">
+				<label for="Email">Email地址:</label>
+				<input type="text" name="Name" id="Email"  required onfocus="focusEmail()" onblur="blurEmail()"/>
+				<span id="emaiMsg" class="msg"></span>
+			</div>
+			<div class="tableRow">
+				<label for="name">设置昵称:</label>
+				<input type="text" name="Address" id="name"  onfocus="focusName()" onblur="blurName()">
+				<span id="Namemsg"></span>
+			</div>
+			<div class="tableRow">
+				<label for="pass">设定密码:</label>
+				<input type="password" name="pass" id="pass"  onfocus="focusPwd()" onblur="blurPwd()"/>
+				<span id="passMsg" class="msg"></span>
+			</div>
+			<div class="tableRow">
+				<label for="passd">再一次输入密码:</label>
+				<input type="password" name="passd" id="passd" onfocus="focusPwdd()" onblur="blurPwdd()" />
+				<span id="passdMsg" class="msg"></span>
+			</div>
+			<div class="tableRow">
+				<label>性别:</label>
+				<p>
+					<input type="radio" name="sex"   value="男"/>
+					<label for="man">男</label>
+					<input type="radio" name="sex"   value="女" checked/>
+					<label for="women">女</label>
+				</p>
+			</div>
+			<div class="tableRow">
+			<label for="characters">
+				所在地区:
+			</label>
+			<select name="characters" id="characters">
+				<option value="">请选择</option>
+				<option value="上海">上海</option>
+				<option value="河北">河北</option>
+				<option value="河南">河南</option>
+			</select>
+			<span id="selectMsg" class="msg"></span>
+			</div>
+			<div class="tableRow">
+				<label></label>
+			<input type="submit" value="提交注册" id="submit" />
+			</div>
+		</fieldset>
+		</form>
+		</div>
+	</body>
+</html>
